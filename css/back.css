@@ -1,0 +1,9 @@
+body{
+	min-width: 1000px;
+}
+
+#select-page td{
+	height: 5em;
+	vertical-align: middle;
+	overflow: hidden;
+}

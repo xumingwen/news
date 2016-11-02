@@ -1,0 +1,215 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+
+/*———————————————————————— 页面蓝色部分样式 ————————————————————————*/
+
+#nav{
+    background: #3e98f0 url(../image/bg-news-logo_344ce44.png) no-repeat;
+    background-position: center 10px;
+    background-size: 65px auto;
+    width: 100%;
+    height: 48px;
+    background-color: #3e98f0;
+    position: relative;
+    border-bottom: 1px solid #5dabf0;
+}
+
+#nav a{
+    width: 34px;
+    height: 100%;
+    background: url(../image/icon-bg_6e9bc53.png) no-repeat;
+    background-size: 40px 500px;
+}
+
+#nav .baidu-icon {
+    background-position: center 6px;
+    margin-left: 8px;
+    float: left;
+}
+
+#nav .profile-icon {
+    background-position: center -461px;
+    margin-left: 10px;
+    float: left;
+}
+
+#nav .subscribe-icon {
+    background-position: center -105px;
+    margin-right: 8px;
+    float: right;
+}
+
+#nav .search-icon {
+    background-position: center -160px;
+    margin-right: 10px;
+    float: right;
+}
+
+#menu{
+	background-color: #3e98f0;
+	display: block;
+	overflow: hidden;
+	padding-bottom: 1px;
+}
+
+#menu li{
+	color: #fff;
+	width: 16.66666%;
+	position: relative;
+    text-align: center;
+    float: left;
+    font-size: 0.16rem;
+    line-height: 0.20rem;
+    list-style: none;
+
+}
+
+#menu li b {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    height: 12px;
+    width: 1px;
+    display: block;
+    overflow-y: hidden;
+    background-color: #5dabf0;
+    line-height: 0.20rem;
+}
+
+#menu a {
+    color: #fff;
+    display: inline-block;
+    padding: 12px 0;
+    text-decoration: none;
+    border-bottom: 2px solid #3e98f0;
+}
+
+.underline{
+	border-bottom: 2px solid #fff!important;
+}
+
+/*———————————————————————— newsbox样式 ————————————————————————*/
+
+.news-box {
+position: relative;
+    border-bottom: 1px solid #f6f6f6;
+    overflow: hidden;
+    padding: 8.5px 0 10px;
+    margin: 0 17px;
+}
+
+.box-img{
+	    font-size: 0;
+    vertical-align: middle;
+    width: 33.33%;
+    text-align: center;
+    overflow: hidden;
+    float: left;
+    margin-left: 0;
+    background-color: #F4F7F9;
+    position: relative;
+}
+
+.box-img img{
+	height: auto;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.box-text{
+	    width: 66.66%;
+    padding-left: 14px;
+    flex: 2;
+    box-sizing: border-box;
+    float: right;
+}
+
+.box-title{
+	    font-size: 1.1rem;
+    line-height: 1.26rem;
+    color: #333;
+    max-height: 1.56rem;
+    overflow: hidden;
+        max-height: 2.54rem;
+}
+
+.box-time{
+	    margin-top: 4px;
+    margin-bottom: 1px;
+        line-height: 17px;
+    height: 17px;
+        display: inline-block;
+    color: #999;
+    font-size: .13rem;
+    margin-right: 5px;
+    font-weight: 400;
+}
+
+/*———————————————————————— content-page样式 ————————————————————————*/
+.cp-nav{
+	    min-width: 320px;
+    height: 48px;
+    background-color: #3e98f0;
+    text-align: center;
+    font-weight: 400;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+}
+
+.toolbar-l {
+    left: 8px;
+    float: left;
+        position: absolute;
+    overflow: hidden;
+    top: 0;
+    width: 34px;
+    height: 100%;
+    font-size: 15px;
+    line-height: 48px;
+    height: 48px;
+}
+
+.btn-back {
+    background-image: url(http://m.news.baidu.com/static/news/webappreact/imgs/icon-bg_6e9bc53.png);
+    background-size: 40px 500px;
+    -webkit-background-size: 40px 500px;
+    background-repeat: no-repeat;
+    background-position: center -213px;
+}
+
+.toolbar-r {
+    right: 16px;
+    float: right;
+        position: absolute;
+    overflow: hidden;
+    top: 0;
+    width: 34px;
+    height: 100%;
+    font-size: 15px;
+    line-height: 48px;
+    height: 48px;
+}
+
+.btn-baidu {
+    display: inline-block;
+    width: 34px;
+    background-image: url(http://m.news.baidu.com/static/news/webappreact/imgs/bg-new-toolbar_6e9bc53.png);
+    background-size: 40px 500px;
+    background-position: center 6px;
+}
+
+.cp-main{
+	margin:1rem;
+}
+
+.cp-main img{
+	margin: 0.5rem auto;
+	width: 100%;
+}
+
+.cp-date{
+	margin: 0.5rem;
+}

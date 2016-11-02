@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/back.css">
+    <title>新闻后台</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-top">
+      <div class="container">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">百度新闻后台</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#">清理缓存</a></li>
+                  <li><a href="#">前台首页</a></li>
+                  <li><a href="#">退出</a></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+  <div class="container">
+      <div class="row">
+          <!-- 左侧col-2的导航条nav -->
+          <div class="col-md-2 ">
+              <ul class="nav ">
+                  
+                  <li id="sp-btn"><a href="#">新闻列表</a></li>
+                  <li id="ip-btn"><a href="#">添加新闻</a></li>
+                  <li><a href="">............</a></li>
+                  <li><a href="#">底下的连接</a></li>
+                  <li><a href="#">全都点不开</a></li>
+                  
+                  <li><a href="">模块管理</a></li>
+                  <li><a href="">辅助插件</a></li>
+                  <li><a href="">HTML更新</a></li>
+                  <li><a href="">会员管理</a></li>
+                  <li><a href="">模板管理</a></li>
+                  <li><a href="">系统设置</a></li>
+                  <li><a href="">版权信息</a></li>
+              </ul>
+          </div>
+
+
+          <!-- 查看所有新闻新闻 -->
+          <div class="col-md-10 " style="display:block" id="select-page">
+              <h3 class="sub-header">新闻列表</h3>
+              <div class="table-responsive">
+
+                  <table class="table table-striped" id="news_container_back">
+                      <tr id="table_head">
+                          <td style="width:5%">
+                              ID
+                          </td>
+                          <td style="width:18%">
+                              标题
+                          </td >
+                          <td style="width:5%">
+                              图片
+                          </td>
+                          <td style="width:30%">
+                              新闻内容
+                          </td>
+                          <td style="width:10%">
+                              时间
+                          </td>
+                          <td style="width:5%">
+                              标签
+                          </td>
+                          <td style="width:12%">
+                          </td>
+                      </tr>
+
+                      <!-- <tr>
+                          <td>1</td>
+                          <td>教育部:全日制和非全日制研究生招录明年统一实施</td>
+                          <td><a href="http://t10.baidu.com/it/u=1836080976,1986581748&fm=170&s=6E100CC752173BC443FC902303003041&w=218&h=146&img.JPEG"  target="_blank">点击查看</a></td>
+                          <td style="display:block">（原标题：教育部：全日制和非全日制研究生招录明年起统一实施） 新京报快讯 教育部日前印发《关于统筹全日制和非全日制研究生管理工作的通知》，明确统筹全日制与非全日制研究生教育协调发展，坚持同一标准，保证同等质量;其学历学位证书具有同等法律地位和相同效力。 
+                          </td>
+                          <td>2016-09-16</td>
+                          <td>推荐</td>
+                          <td>
+                              <button class="btn btn-info update-btn">编辑</button>
+                              <button class="btn btn-danger delete-btn">删除</button>
+                          </td>
+                      </tr> -->
+                  </table>
+              </div>
+          </div>
+
+
+          <!-- 编辑具体的某一条新闻 -->
+          <div class="col-md-10 " style="display:none" id="update-page">
+              <h3 class="sub-header">更新新闻</h3>
+              <form action="php/update.php" target="id_iframe" onsubmit="return updateCheck()">
+                  <div class="table-responsive">
+                      <table class="table table-striped">
+                          <tr>
+                              <td class="col-md-3">
+                                  <label for="up_title">新闻标题</label>
+                              </td>
+                              <td class="col-md-9">
+                                  <!-- 新闻ID放着这里了，是一个hidden的input -->
+                                  <input type="hidden" id="up_id" name="newsid" value="">
+                                  <!-- 下面这个才是新闻标题 -->
+                                  <input type="text" id="up_title" name="newstitle" style="width:443px" required="required">
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <label for="up_img">图片地址</label>
+                              </td>
+                              <td>
+                                  <input type="text" id="up_img" name="newsimg" style="width:443px" required="required">
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <label for="up_content">新闻内容</label>
+                              </td>
+                              <td>
+                                  <textarea id="up_content" name="newscontent" cols="60" rows="10" required="required"></textarea>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <label for="up_time">新闻时间</label>
+                              </td>
+                              <td>
+                                  <input type="date" id="up_time" name="addtime"  required="required">
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <label for="up_tag">新闻标签</label>
+                              </td>
+                              <td>
+                                  <select id="up_tag" name="newstag" style="height: 24px">
+                                      <option value="推荐">推荐</option>
+                                      <option value="科技">科技</option>
+                                      <option value="">其他标签就没有做了</option>
+                                  </select>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td></td>
+                              <td>
+
+                                  <input class="btn btn-info the-update-btn" type="submit" value="修改" onclick="updateF5()">
+                                  <input class="btn btn-warning cancal-update-btn" type="button" value="取消">
+                                  
+                              </td>
+                          </tr>
+                      </table>
+                  </div>
+              </form>
+          </div>
+          <!-- update新闻结束 -->
+
+          <!-- insert新闻  -->
+          <div class="col-md-10 " style="display:none" id="insert-page">
+              <h3 class="sub-header">添加新闻</h3>
+              <form action="php/insert.php" target="id_iframe" onsubmit="return insertCheck()">
+                  <div class="table-responsive">
+                      <table class="table table-striped">
+                          <tr>
+                              <td class="col-md-3">
+                                  <label for="newsititle">新闻标题</label>
+                              </td>
+                              <td class="col-md-9">
+                                  <input type="text" id="newstitle" name="newstitle" style="width:443px" required="required">
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <label for="newsimg">图片地址</label>
+                              </td>
+                              <td>
+                                  <input type="text" id="newsimg" name="newsimg" style="width:443px" required="required">
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <label for="newscontent">新闻内容</label>
+                              </td>
+                              <td>
+                                  <textarea id="newscontent" name="newscontent" cols="60" rows="10" required="required"></textarea>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <label for="newsititle">新闻时间</label>
+                              </td>
+                              <td>
+                                  <input type="date" id="addtime" name="addtime" required="required">
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <label for="newstag" >新闻标签</label>
+                              </td>
+                              <td>
+                                  <select id="newstag" name="newstag" style="height: 24px">
+                                      <option value="推荐">推荐</option>
+                                      <option value="科技">科技</option>
+                                      <option value="">其他标签就没有做了</option>
+                                  </select>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td></td>
+                              <td>
+                                  <input class="btn btn-info" type="submit" value="提交" onclick="insertF5()">
+                                  <input class="btn btn-warning" type="reset" value="重置">
+                              </td>
+                          </tr>
+                      </table>
+                  </div>
+              </form>
+          </div>
+          <!-- insert新闻结束 -->
+      </div>
+  </div>
+
+  <!-- 防止form表单提交的时候页面跳转 -->
+  <iframe name="id_iframe"   style="display:none;"></iframe> 
+  <script src="js/jquery.min.js"></script>
+  <script src="js/back.js"></script>
+</body>
+</html>
